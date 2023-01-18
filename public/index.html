@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Maths</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+        html, body{
+            margin: 50px auto;
+           
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-color: black;
+        }
+
+        h1{
+            font-size: 28px;
+            letter-spacing: 2px;
+           
+        }
+
+        .score{
+            font-family: 'VT323', monospace;
+            color: #fff;
+        }
+        
+        canvas{
+            position: relative;
+           display: block;
+           border: 2px solid white;
+        }
+
+        .restartgame{
+            display: none;
+            font-size: large;
+            padding: 16px 20px;
+            cursor: pointer;
+           
+        }
+
+        .scoregame{
+            font-size: 40px;
+            color: #fff;
+        }
+
+        .active{
+            display: block;
+            font-size: 20px;
+            padding: 16px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            background-color: aqua;
+            border: none;
+        }
+
+        .gamepad{
+            display: none;
+            margin-top: 1rem;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gamepad button{
+            font-size: 30px;
+            border: none;
+            border-radius: 5px;
+            background-color: red;
+            width: 100px;
+            height: 100px;
+        }
+
+        .board{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #fff;
+          
+            width: 100% !important;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media only screen and (max-width: 600px) {
+
+            .canvas{
+                border-top: 2px solid white;
+                border-bottom: 2px solid white;
+            }
+           .gamepad{
+            display: flex;
+           }
+        }
+        </style>
+</head>
+<body>
+   
+    <h1 class="score">SCORE: 0</h1>
+    <canvas id="canvas"></canvas>
+    <!-- <div class="board"> -->
+    <h1 class="scoregame"></h1>
+    <button class="restartgame">Restart</button>
+    <!-- </div> -->
+
+    <div class="gamepad">
+        <button id="up">UP</button>
+        <div style="display: flex;">    
+            <button id="left">LEFT</button>
+            <span style="width: 100px;"></span>
+            <button id="right">Right</button>
+        </div>
+        <button id="down">Down</button>
+    </div>
+    <script type="text/javascript" src="./app.js"></script>
+</body>
+</html>
