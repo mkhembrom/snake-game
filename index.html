@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,108 +15,24 @@
     <meta property="og:site_name" content="mksnake" key="ogsitename" />
     <meta property="og:title" content="mksnake" key="ogtitle" />
     <meta property="og:description" content="Snake game created by manjesh" key="ogdesc" />
-    <link rel="icon" href="/cat.ico" />
+    <link rel="stylesheet" href="./style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/site.webmanifest">
     <title>Mk-Snake Game</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
-
-        html, body{
-            margin: 50px auto;
-           
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            background-color: black;
-        }
-
-        h1{
-            font-size: 28px;
-            letter-spacing: 2px;
-           
-        }
-
-        .score{
-            font-family: 'VT323', monospace;
-            color: #fff;
-        }
-        
-        canvas{
-            position: relative;
-           display: block;
-           border: 2px solid white;
-        }
-
-        .restartgame{
-            display: none;
-            font-size: large;
-            padding: 16px 20px;
-            cursor: pointer;
-           
-        }
-
-        .scoregame{
-            font-size: 40px;
-            color: #fff;
-        }
-
-        .active{
-            display: block;
-            font-size: 20px;
-            padding: 16px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            background-color: aqua;
-            border: none;
-        }
-
-        .gamepad{
-            display: none;
-            margin-top: 1rem;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .gamepad button{
-            font-size: 30px;
-            border: none;
-            border-radius: 5px;
-            background-color: red;
-            width: 100px;
-            height: 100px;
-        }
-
-        .board{
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            background-color: #fff;
-          
-            width: 100% !important;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        @media only screen and (max-width: 600px) {
-
-            .canvas{
-                border-top: 2px solid white;
-                border-bottom: 2px solid white;
-            }
-           .gamepad{
-            display: flex;
-           }
-        }
-        </style>
 </head>
+
 <body>
-   
-    <h1 class="score">SCORE: 0</h1>
+
+    <div class="scoremode">
+        <h1 class="score">SCORE: 0</h1>
+        <label class="switch">
+            <input id="theme-toggle" type="checkbox">
+            <span class="slider round"></span>
+        </label>
+    </div>
+
     <canvas id="canvas"></canvas>
     <!-- <div class="board"> -->
     <h1 class="scoregame"></h1>
@@ -124,13 +41,15 @@
 
     <div class="gamepad">
         <button id="up">UP</button>
-        <div style="display: flex;">    
+        <div style="display: flex;">
             <button id="left">LEFT</button>
             <span style="width: 100px;"></span>
             <button id="right">Right</button>
         </div>
         <button id="down">Down</button>
     </div>
+    <script type="text/javascript" src="./theme.js"></script>
     <script type="text/javascript" src="./app.js"></script>
 </body>
+
 </html>
